@@ -19,10 +19,10 @@ methods
         obj.addNeuronTypes(1, 'linear'); % linear neuron type from the library - here we use the number 1 to add a single neuron type (1 is not an index) - other types include 'stochastic' and 'linear-integrate-and-fire'
         obj.neuron(1).S = [1 0 0 0]; % axon type 0 has a weight of 1, and the rest are 0 (note that array numbering here differs from Matlab) - four types of axons per neuron
         obj.neuron(1).sigma = [1 1 1 1]; % signs for each axon weight
-        obj.neuron(1).alpha = 1 % threshold is 1
-        obj.neuron(1).beta = 0 % negative threshold - potential bottoms out at 0
-        obj.neuron(1).lmda = 0 % no leakage current
-        obj.neuron(1).sigma_l = -1 % sign of the leak (irrelevant here)
+        obj.neuron(1).alpha = 1; % threshold is 1
+        obj.neuron(1).beta = 0; % negative threshold - potential bottoms out at 0
+        obj.neuron(1).lmda = 0; % no leakage current
+        obj.neuron(1).sigma_l = -1; % sign of the leak (irrelevant here)
 
     end
 
@@ -46,17 +46,17 @@ methods
 
         numPins = 1; % 1 input, 1 output
 
-	obj.inputs(1) = connector(numPins, 'input'); % create input connector with 1 pin
-	targetCoreIds = obj.core(1).coreID; % target is core 1
-	targetAxons = 1; % target is axon 1
-	obj.inputs(1).wireTgtCores(targetCoreIds, targetAxons); % input connector gets routed to core 1, axon 1
+        obj.inputs(1) = connector(numPins, 'input'); % create input connector with 1 pin
+        targetCoreIds = obj.core(1).coreID; % target is core 1
+        targetAxons = 1; % target is axon 1
+        obj.inputs(1).wireTgtCores(targetCoreIds, targetAxons); % input connector gets routed to core 1, axon 1
 
-	obj.outputs(1) = connector(numPins, 'output'); % create output connector with 1 pin
-	sourceCoreIds = obj.core(1).coreID; % coming from core 1
-	sourceNeurons = 1; % coming from neuron 1
-	obj.outputs(1).wireSrcCores(sourceCoreIds, sourceNeurons); % output connector is connected to core 1, neuron 1
+        obj.outputs(1) = connector(numPins, 'output'); % create output connector with 1 pin
+        sourceCoreIds = obj.core(1).coreID; % coming from core 1
+        sourceNeurons = 1; % coming from neuron 1
+        obj.outputs(1).wireSrcCores(sourceCoreIds, sourceNeurons); % output connector is connected to core 1, neuron 1
 
-	obj.core(1).setDisconnected(2 : 256); % disconnect the unused neurons on core 1
+        obj.core(1).setDisconnected(2 : 256); % disconnect the unused neurons on core 1
 
     end
 

@@ -1,0 +1,4 @@
+OneNeuronCoreletHowToRun.m follows the tutorial. Unfortunately, the tutorial was outdated. RunCPEModern.m follows Rebecca's example instead.
+
+matlab
+RunCPEModern

@@ -12,7 +12,6 @@ methods
         childTwo = oneNeuronCorelet();
         obj.subcorelets(1) = childOne;
         obj.subcorelets(2) = childTwo;
-        obj.setUpIO();
 
         parentInput = connector(childOne.inputs(1).csize, 'input'); % make a connector the same size as the child's input
         parentInput.busTo(childOne.inputs(1)); % and send it over
